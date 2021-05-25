@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Configuration;
 
 namespace SistemaUnique
 {
     public partial class Form6 : Form
     {
-        //Colocar usuario y password del Gestor de Base de Datos en uid y pwd respectivamente
-        SqlConnection cn = new SqlConnection("server=.;database=BD_SIS_UNIQUE;uid=usuario;pwd=password");
+        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["mssqlcon"].ConnectionString);
 
         DataTable Categorias()
         {
